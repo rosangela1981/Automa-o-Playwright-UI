@@ -1,5 +1,6 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+import { time } from 'console';
 import path from 'path/win32';
 
 
@@ -9,7 +10,7 @@ test.use({
 })  
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://www.automationpratice.com.br/');
+  await page.goto('https://www.automationpratice.com.br/') , { timeout: 60000 };
 });
 
 test('Login com sucesso @login', async ({ page }) => {
